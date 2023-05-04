@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet" />
+    <title>Interactive Card</title>
+</head>
+
+<body>
+    <main>
+        <div class="cards-container">
+            <div class="card-back card-container">
+                <img src="./assets/images/bg-card-back.png" alt="Credit card back" class="card" />
+                <p class="card-cvc" id="preview-cvc">000</p>
+            </div>
+            <div class="card-front card-container">
+                <img src="./assets/images/bg-card-front.png" alt="Credit card front" class="card" />
+                <div class="card-info">
+                    <div class="card-logo">
+                        <svg width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff" />
+                            <path
+                                d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z"
+                                stroke="#fff" />
+                        </svg>
+                    </div>
+                    <p class="card-number" id="preview-cardnumber">0000 0000 0000 0000</p>
+                    <div class="card-personal">
+                        <p class="personal-name" id="preview-cardholder">JANE APPLESEED</p>
+                        <p class="personal-date" id="preview-date"><span id="preview-month">00</span>/<span
+                                id="preview-year">00</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form class="container form-container" id="form-wrapper">
+            <div class="input-container">
+                <label for="cardholder">Cardholder name</label>
+                <input type="text" id="cardholder" class="card-field" placeholder="e.g. Jane Appleseed" />
+                <span class="warning" hidden>xxx</span>
+            </div>
+            <div class="input-container">
+                <label for="cardnumber">Card number</label>
+                <input type="text" id="cardnumber" class="card-field" placeholder="e.g. 1234 5678 9123 0000" />
+                <span class="warning" hidden>111</span>
+            </div>
+            <div class="two-columns">
+                <div class="input-container">
+                    <label for="month">Exp. Date (MM/YY)</label>
+                    <div class="dates">
+                        <input type="text" id="month" class="card-field date" placeholder="MM" />
+                        <input type="text" id="year" class="card-field date" placeholder="YY" />
+                    </div>
+                    <span class="warning" hidden>xxx</span>
+                </div>
+                <div class="input-container">
+                    <label for="cvc">CVC</label>
+                    <input type="text" id="cvc" class="card-field" placeholder="CVC" />
+                    <span class="warning" hidden>xxx</span>
+                </div>
+            </div>
+            <button class="btn" id="btn-submit">Confirm</button>
+        </form>
+        <div id="confirmation-wrapper" class="container confirmation-container" hidden>
+            <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="40" fill="url(#a)" />
+                <path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3" />
+                <defs>
+                    <linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#6348FE" />
+                        <stop offset="1" stop-color="#610595" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <h1 class="confirmation-heading">Thank you!</h1>
+            <p class="confirmation-subheading">We've added your card details.</p>
+            <button class="btn" id="btn-continue">Continue</button>
+        </div>
+    </main>
+    <script src="./assets/scripts/script.js"></script>
+</body>
+
+</html>
